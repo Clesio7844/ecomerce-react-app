@@ -1,0 +1,56 @@
+.header {
+  position: sticky;
+  /* background-color: #555; */
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+nav {
+  flex: 1;
+  text-align: center;
+}
+
+nav ul {
+  display: inline-block;
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #555;
+  text-transform: capitalize;
+}
+
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.header_optionLinOne {
+  font-size: 10px;
+}
+
+.header__optionBasket {
+  display: flex;
+  align-items: center;
+}
+
+.header__basketCount {
+  margin-right: 10px;
+  margin-left: 10px;
+}
