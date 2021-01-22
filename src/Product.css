@@ -1,0 +1,39 @@
+img {
+  padding: 10px;
+  width: 100%;
+
+  object-fit: contain;
+}
+
+h4 {
+  color: #555;
+  font-weight: normal;
+  padding-left: 15px;
+}
+
+p {
+  font-size: 14px;
+  padding-left: 13px;
+}
+
+.rating {
+  color: #ff523b;
+  padding-left: 13px;
+}
+
+.product .btn__product {
+  /* display: inline-block; */
+  margin-left: 13px;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: #ff523b;
+  color: #fff;
+  transition: background 0.5s;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.btn__product:hover {
+  background: #563434;
+}
