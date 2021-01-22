@@ -89,7 +89,7 @@ function Home() {
             <Product
               id='4'
               title='Red Print T-Shirt'
-              price={20.0}
+              price={20.99}
               image={product5}
               rating={5}
             />
@@ -119,7 +119,7 @@ function Home() {
             <Product
               id='8'
               title='Red Print T-Shirt'
-              price={20.0}
+              price={20.99}
               image={product8}
               rating={5}
             />
