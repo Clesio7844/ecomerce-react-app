@@ -40,6 +40,14 @@ a {
   font-size: 10px;
 }
 
+.header_optionLintwo {
+  font-size: 15px;
+  position: absolute;
+  top: 50px;
+  right: 480px;
+  color: #555;
+}
+
 .header__optionBasket {
   display: flex;
   align-items: center;

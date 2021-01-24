@@ -30,9 +30,12 @@ function Header() {
           </div>
           <nav className='header__nav'>
             <ul className='MenuItems'>
-              <div className='header__option'>
-                <span className='header_optionLinOne'>Hello Guest</span>
-              </div>
+              <Link to='/login'>
+                <div className='header__option'>
+                  <span className='header_optionLinOne'>Hello Guest</span>
+                  <span className='header_optionLintwo'>Sign In</span>
+                </div>
+              </Link>
               {links.map(link => {
                 const { id, url, text } = link;
                 return (

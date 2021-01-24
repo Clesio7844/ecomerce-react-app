@@ -1,3 +1,7 @@
+.home {
+  background: radial-gradient(#fff, #130b0c);
+}
+
 .container {
   max-width: 1300px;
   margin: auto;
