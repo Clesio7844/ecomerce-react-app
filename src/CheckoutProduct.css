@@ -1,0 +1,33 @@
+.cart-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+td {
+  padding: 10px 16px;
+}
+
+td input {
+  width: 40px;
+  height: 30px;
+  padding: 5px;
+  margin-right: 300px;
+}
+
+td button {
+  background-color: #ff523b;
+  font-size: 12px;
+  color: #fff;
+  padding: 5px;
+}
+
+td img {
+  width: 120px;
+  height: 170px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.checkout__productall {
+  padding-top: 49px;
+}
