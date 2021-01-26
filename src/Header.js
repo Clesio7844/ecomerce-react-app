@@ -6,13 +6,20 @@ import ToggleImg from './images/menu.png';
 import { links, social } from './data';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { Link } from 'react-router-dom';
+import { auth } from './firebase';
 
 import './Header.css';
 import { useStateValue } from './StateProvider';
 
 function Header() {
   const [showLinks, setShowLinks] = useState(true);
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
+
+  const handleAuthentication = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
 
   return (
     <div className='header'>
@@ -30,10 +37,12 @@ function Header() {
           </div>
           <nav className='header__nav'>
             <ul className='MenuItems'>
-              <Link to='/login'>
-                <div className='header__option'>
+              <Link to={!user && '/login'}>
+                <div onClick={handleAuthentication} className='header__option'>
                   <span className='header_optionLinOne'>Hello Guest</span>
-                  <span className='header_optionLintwo'>Sign In</span>
+                  <span className='header_optionLintwo'>
+                    {user ? 'Sign Out' : 'Sign In'}
+                  </span>
                 </div>
               </Link>
               {links.map(link => {

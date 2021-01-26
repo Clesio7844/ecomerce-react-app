@@ -1,12 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.css';
 import image1 from './images/image1.png';
+import { Link, useHistory } from 'react-router-dom';
+import { auth } from './firebase';
 
 function Login() {
-  const register = () => {
-    // RegForm.style.transform = 'translateX(0px)';
-    // LoginForm.style.transform = 'translateX(0px)';
-    // Indicator.style.transform = 'translateX(100px)';
+  const history = useHistory();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
+
+  const signIn = e => {
+    e.preventDefault();
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then(auth => {
+        history.push('/');
+      })
+      .catch(error => alert(error.message));
+  };
+
+  const register = e => {
+    e.preventDefault();
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then(auth => {
+        console.log(auth);
+        if (auth) {
+          history.push('/');
+        }
+      })
+      .catch(error => alert(error.message));
   };
 
   return (
@@ -24,20 +48,48 @@ function Login() {
                 <hr id='Indicator' />
               </div>
               <form id='LoginForm'>
-                <input type='text' placeholder='Username' />
-                <input type='password' placeholder='Password' />
-                <button type='submit' className='btn'>
+                <input
+                  type='text'
+                  value={email}
+                  placeholder='email'
+                  onChange={e => setEmail(e.target.value)}
+                />
+                <input
+                  type='password'
+                  placeholder='Password'
+                  value={password}
+                  onChange={e => setPassword(e.target.value)}
+                />
+                <button type='submit' onClick={signIn} className='btn'>
                   Login
                 </button>
-              </form>
-              <form id='RegForm'>
-                <input type='text' placeholder='Username' />
-                <input type='email' placeholder='Email' />
-                <input type='password' placeholder='Password' />
                 <button type='submit' onClick={register} className='btn'>
                   Register
                 </button>
               </form>
+              {/* <form id='RegForm'>
+                <input
+                  type='text'
+                  value={username}
+                  placeholder='Username'
+                  onChange={e => setUsername(e.target.value)}
+                />
+                <input
+                  value={email}
+                  type='text'
+                  placeholder='Email'
+                  onChange={e => setEmail(e.target.value)}
+                />
+                <input
+                  value={password}
+                  type='password'
+                  placeholder='Password'
+                  onChange={e => setPassword(e.target.value)}
+                />
+                <button type='submit' onClick={register} className='btn'>
+                  Register
+                </button>
+              </form> */}
             </div>
           </div>
         </div>

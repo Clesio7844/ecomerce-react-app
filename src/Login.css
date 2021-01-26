@@ -57,10 +57,12 @@ form .btn:focus {
 
 #LoginForm {
   left: 0;
+  /* left: -300px; */
 }
 
 #RegForm {
-  left: -300px;
+  /* left: -300px; */
+  /* left: 0; */
 }
 
 form {
